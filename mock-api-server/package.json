@@ -1,0 +1,16 @@
+{
+    "name": "mock-api-server",
+    "version": "0.0.0",
+    "main": "server.js",
+    "scripts": {
+        "start": "supervisor server.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "cookie-parser": "^1.4.3",
+        "cors": "^2.7.1",
+        "express": "^4.14.0",
+        "moment": "^2.17.1",
+        "pg": "^6.1.2"
+    }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "react-selenium-ui-test-example",
+  "version": "0.0.0",
+  "private": false,
+  "dependencies": {
+    "leaflet": "^1.2.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-leaflet": "^1.7.4",
+    "react-scripts": "1.1.4",
+    "react-toolbox": "^2.0.0-beta.13",
+    "sinon": "^5.0.7"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "start:server": "node mock-api-server/server.js",
+    "start:all": "yarn run start:server | yarn start",
+    "install:all": "yarn install && cd mock-api-server && yarn install",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "test:ui": "mocha --require babel-core/register --require babel-polyfill --timeout 60000 ./src/selenium-ui-tests",
+    "eject": "react-app-rewired eject"
+  },
+  "devDependencies": {
+    "babel": "6.3.13",
+    "babel-core": "^6.18.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "chai": "^4.1.2",
+    "chai-enzyme": "^1.0.0-beta.0",
+    "classnames": "^2.2.5",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb": "15.1.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.9.0",
+    "react-app-rewire-eslint": "^0.2.3",
+    "react-app-rewired": "^1.5.2",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
