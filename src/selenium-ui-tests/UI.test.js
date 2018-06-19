@@ -12,80 +12,80 @@ describe('React Selenium UI Test Example', () => {
     page.quit();
   });
 
-  describe('', () => {
-    it('checking number of markers = 3', async () => {
+  describe('Deactivating and reactivating markers', () => {
+    it('Checking number of markers = 3', async () => {
       await page.assertMarkerCount(3);
     });
 
-    it('clicking first marker', async () => {
+    it('Clicking first marker', async () => {
       await page.clickMarker(0);
     });
 
-    it('waiting for details loading', async () => {
+    it('Waiting for details loading', async () => {
       await page.detailsLoaded();
     });
 
-    it('edit comment', async () => {
+    it('Edit comment', async () => {
       await page.editDetailsComment('This is a comment');
     });
 
-    it('deactivate', async () => {
+    it('Deactivate', async () => {
       await page.deactivateDetails();
     });
 
-    it('waiting for map loading', async () => {
+    it('Waiting for map loading', async () => {
       await page.mapLoaded();
     });
 
-    it('checking number of markers = 2', async () => {
+    it('Checking number of markers = 2', async () => {
       await page.assertMarkerCount(2);
     });
 
-    it('clicking second marker', async () => {
+    it('Clicking second marker', async () => {
       await page.clickMarker(0);
     });
 
-    it('waiting for details loading', async () => {
+    it('Waiting for details loading', async () => {
       await page.detailsLoaded();
     });
 
-    it('edit comment', async () => {
+    it('Edit comment', async () => {
       await page.editDetailsComment('This is another comment');
     });
 
-    it('deactivate', async () => {
+    it('Deactivate', async () => {
       await page.deactivateDetails();
     });
 
-    it('waiting for map loading', async () => {
+    it('Waiting for map loading', async () => {
       await page.mapLoaded();
     });
 
-    it('checking number of markers = 1', async () => {
+    it('Checking number of markers = 1', async () => {
       await page.assertMarkerCount(1);
     });
 
-    it('clicking last marker', async () => {
+    it('Clicking last marker', async () => {
       await page.clickMarker(0);
     });
 
-    it('waiting for details loading', async () => {
+    it('Waiting for details loading', async () => {
       await page.detailsLoaded();
     });
 
-    it('edit comment', async () => {
+    it('Edit comment', async () => {
       await page.editDetailsComment('This is the final comment');
     });
 
-    it('deactivate', async () => {
+    it('Deactivate', async () => {
       await page.deactivateDetails();
     });
 
-    it('waiting for map loading', async () => {
+    it('Waiting for map loading', async () => {
       await page.mapLoaded();
     });
 
-    it('checking no markers are present', async () => {
+    it('Checking no markers are present', async () => {
       await page.markersAreNotPresent();
     });
 
@@ -93,11 +93,11 @@ describe('React Selenium UI Test Example', () => {
       await page.reactivateMarkers();
     });
 
-    it('wait for page to load', async () => {
+    it('Wait for page to load', async () => {
       await page.mapLoaded();
     });
 
-    it('checking number of markers = 3', async () => {
+    it('Checking number of markers = 3', async () => {
       await page.assertMarkerCount(3);
     });
   });
