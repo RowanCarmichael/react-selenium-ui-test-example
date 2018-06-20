@@ -1,4 +1,4 @@
-const delay = 2000;
+const delay = 100;
 
 const mapData = [
   { id: '123b', active: true, name: 'Rowan', vehicle: 'Suzuki Swift 2005', odometer: 220000, location: [45.5066927, -122.6890254] },

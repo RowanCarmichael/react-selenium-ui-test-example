@@ -1,10 +1,14 @@
-const { Builder, until } = require('selenium-webdriver');
+import { Builder, until } from 'selenium-webdriver';
+// import chrome from 'selenium-webdriver/chrome';
 
 let driver;
 
 class Page {
   load = (url) => {
-    driver = new Builder().forBrowser('chrome').build();
+    driver = new Builder()
+      .forBrowser('chrome')
+      // .setChromeOptions(new chrome.Options().headless())
+      .build();
     driver.get(url);
     return driver;
   }
