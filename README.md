@@ -61,7 +61,7 @@ describe('UI Test Exmaple', () => {
 ```
 
 4. In [package.json](https://github.com/RowanCarmichael/react-selenium-ui-test-example/blob/master/package.json) add a new script (we've called ours 'test:ui') which will use mocha to run any tests in the given folder:
-```json
+```javascript
 {
   ...
   "scripts": {
@@ -76,3 +76,20 @@ Some additional options which we have added are `--require babel-core/register -
 5. All the setup to run the tests are complete!
 Check out the [Running test](#running-tests) section from here
 
+## Options to explore in the future
+
+### Running UI Tests in parallel
+As we move higher up the testing pyramid the complexity and time taken to run a single test increases. As such end-to-end and UI level tests can take quite a lot of time when compared to unit/component level testing. To combat this we can do a few things such as running a headless browser but the biggest time improvement will come from running multiple tests in parallel. [mocha-parallel-tests](https://github.com/yandex/mocha-parallel-tests) gives us the functionality to do so. All that is required is running `yarn add --dev mocha-parallel-tests` to install it, then replacing `mocha` with `mocha-parallel-test` for the `test:ui` script in [package.json](https://github.com/RowanCarmichael/react-selenium-ui-test-example/blob/master/package.json) like so:
+```javascript
+{
+  ...
+  "scripts": {
+    ...
+    "test:ui": "mocha-parallel-tests ./src/selenium-ui-tests"
+  },
+  ...
+}
+```
+This will run the `describe` blocks in all test files in parallel. The max number of tests running at a given time will be dependant on the number of cores the machine that is running them has but we can also put on a max limit by adding the `--max-parallel` option to the script.
+While this is great for UI tests for apps which have static data there are some complexities if we are using a single node.js server to mock the api/database. In this case we now have tests which rely on data that can be changed for other tests. This is not good.
+A way around this could be for each test case to start up a separate local mock server which for our node.js (Express) servers only takes a second. But this would require a bit of coordination between the port of mock server and the app's api. For this example it has not been implemented but it is definitely worth investigating further in the future.
